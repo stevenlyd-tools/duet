@@ -1,0 +1,44 @@
+name: CI
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ['22.18.0', '24']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Remove the runner image's Git LFS filters
+        # Hosted images configure Git LFS filters system-wide. Duet refuses
+        # external filters, and its Git child processes drop GIT_CONFIG_*
+        # overrides, so remove them from this ephemeral runner.
+        run: |
+          sudo git config --system --remove-section filter.lfs || true
+          git config --global --remove-section filter.lfs || true
+      - name: Install development dependencies
+        run: npm ci --ignore-scripts
+      - name: Test with isolated Git configuration
+        # Ignore ambient LFS/drivers for this process tree; never edit the
+        # runner's global/system configuration. Repository-local
+        # configuration remains visible so the driver-rejection tests still run.
+        env:
+          GIT_CONFIG_NOSYSTEM: '1'
+          GIT_CONFIG_GLOBAL: /dev/null
+          GIT_TERMINAL_PROMPT: '0'
+        run: npm run check
+      - name: Validate distribution release version
+        if: github.event_name == 'pull_request'
+        env:
+          DUET_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: node scripts/distribution.ts --check --base "$DUET_BASE_SHA"

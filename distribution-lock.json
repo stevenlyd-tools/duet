@@ -1,0 +1,32 @@
+{
+  "version": "0.26.0",
+  "files": {
+    ".agents/plugins/marketplace.json": "32211bc5db12449ed9da9bbb8fd8abd34909430701e6c6f0f49f955144f9a522",
+    ".claude-plugin/marketplace.json": "3381d5dbdd6b0c199366d633ee521ce21de17dd9984deeca98da5fdb32aa224e",
+    ".claude-plugin/plugin.json": "1fefc07faecd63622bb4f57959c810ccd631aee87b9a4a5cad1f790debdd07ce",
+    "gemini-extension.json": "6a7b016e6deff355799eb0c4e93b030bf1fc55f029e2a9e00ba20078838539b8",
+    "plugin.json": "e62c2daccd11e5b294158c10c9678ad0452b37cedfca54cbda57795477316a5c",
+    "skills/duet/SKILL.md": "750bc6eaceeaef7eabcdc0f54d7ee69a9a077eb6c03e985f06b91a31ae85de60",
+    "skills/duet/references/boundaries.md": "d4c014e1bc0ad936823ab65615a25578d7b898f4b3c4f06ac9504c62893c19e3",
+    "skills/duet/references/cleanup.md": "c39856054942eeeb899672404e65701d93247192cb699f55901133b525b6c536",
+    "skills/duet/references/delivery.md": "a925378d90974dd8fa471fcee28c1aa90ba0785e537c3e1330fd77056201c6e9",
+    "skills/duet/references/execution.md": "1f9b8d408c6c696e67ceaefddcd0397b8f52f137ce9019537f16bbbbc08ff385",
+    "skills/duet/references/freshness.md": "0144d674875cb507cc453382c4c040efdb04b07e50a6e5231a438dd9440bd1f9",
+    "skills/duet/references/issue-closure.md": "ff9d9d1891844abee639b7a7f4d46a404bf6f974b4b3c29f2fd6b6cac5eb0f31",
+    "skills/duet/references/suo.md": "82b8d83f30bad73a5a47b13ad7b8a927f3801f5855c6b77b1688fedbaa46d3ff",
+    "skills/duet/references/tracking.md": "71105446a0fedbeecdb86fb505aec03aca0b11e4d55223acd59634f99d1f8ffc",
+    "src/cli.ts": "f573436fc59f973a2f16b9654910425a18c24834b8499ec68ba6f14267cf9452",
+    "src/completion.ts": "f8cb5c162d2346fca0426a9aab9348f3f3a35d014fb8bb6468c38d710f3ded71",
+    "src/delivery.ts": "2e5d3f3785b20a8f270ac8d4039eca192040069455fe2f38cee3573cd8874d83",
+    "src/diagnostics.ts": "18b3c4058baa49c38747ddd391b69a54607a9ac73360e7865d3e77bb209b6596",
+    "src/engine.ts": "47006a5a8a343fbfc14c1af0ae143ec7a7a10730a01384e8940edbf604a3a90a",
+    "src/freshness.ts": "789b8f1abf91cfdcb3f10354ec2ba5ad438e074668a5aa3e340ad4e8213fc176",
+    "src/hooks.ts": "cbc2b363e0a083e2867ae898f6ffd08e2f0b3ebf5fbdba579882a6bbe9d72aba",
+    "src/issue-completion.ts": "1458e196604d986eb52219adf46347268d9fd1ce084d0ddcb127c251fba395d0",
+    "src/manifest.ts": "a31555a3f067c502862eb5be1cd88c0844a5e356e90895ab3619d1de969ae2a2",
+    "src/persistent-alpha.ts": "fa5abcb9a360713523328ea0fa5fc05aac9a5e1a4c4a2c8d5e4df1bd189fb603",
+    "src/preflight.ts": "0ac3cb1c67fa1a83f36d994f5c14a9903e47cc6e2aac314e374caedc2b96dc64",
+    "src/suo-runtime.ts": "5813b310f0c8f692dbedef7607ccdbacd4d7edd83ba635c1f6d9349af26e11a1",
+    "package.json#pi": "5f8865f6c21a92e45f7853d94f49f9b26c48af6d2dffcfa365fef5d78f4a340b"
+  }
+}

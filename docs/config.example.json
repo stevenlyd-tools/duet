@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "projectId": "example-project",
+  "mainBranch": "main",
+  "hooks": {
+    "checks": [
+      {
+        "argv": [
+          "npm",
+          "test"
+        ],
+        "timeoutMs": 120000
+      },
+      {
+        "argv": [
+          "npm",
+          "run",
+          "build"
+        ],
+        "timeoutMs": 120000
+      }
+    ],
+    "envAllow": []
+  }
+}

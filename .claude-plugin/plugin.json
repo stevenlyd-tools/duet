@@ -1,0 +1,10 @@
+{
+  "name": "duet",
+  "version": "0.26.0",
+  "description": "A workflow for two roles working through coding agents: one prototypes ideas, the other engineers the chosen ones for production",
+  "author": {
+    "name": "Steven Liu"
+  },
+  "repository": "https://github.com/stevenlyd/duet",
+  "skills": "./skills/"
+}

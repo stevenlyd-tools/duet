@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "mode": "persistent",
+  "provider": "github-actions",
+  "repository": "OWNER/PROJECT",
+  "branch": "integration/alpha",
+  "checkWorkflow": "check.yml",
+  "deployWorkflow": "deploy-alpha.yml",
+  "dataPolicy": "retain",
+  "operation": "deploy-code"
+}
