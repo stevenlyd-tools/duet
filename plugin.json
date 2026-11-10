@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "duet",
-  "version": "0.26.0",
+  "version": "0.26.1",
   "description": "A workflow for two roles working through coding agents: one prototypes ideas, the other engineers the chosen ones for production",
   "author": {
     "name": "Steven Liu"

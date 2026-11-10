@@ -8,6 +8,20 @@ See [release process](https://github.com/stevenlyd/duet/blob/main/docs/releases.
 
 ## [Unreleased]
 
+## [0.26.1] - 2026-11-10
+
+### Added
+
+- A plugin icon (`.claude-plugin/icon.png`, with its SVG source) and the `displayName`, `homepage` and `license` fields in the Claude Code plugin manifest. The skill and the CLI are unchanged.
+
+### Breaking changes
+
+- None.
+
+### Migration
+
+- None.
+
 ## [0.26.0] - 2026-11-10
 
 Duet is now scoped to one thing: a workflow for two roles, a prototyper and an engineer, who both work through coding agents. Everything that served a single team's own machines and projects was removed.

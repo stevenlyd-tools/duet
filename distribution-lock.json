@@ -1,12 +1,12 @@
 {
-  "version": "0.26.0",
+  "version": "0.26.1",
   "files": {
     ".agents/plugins/marketplace.json": "32211bc5db12449ed9da9bbb8fd8abd34909430701e6c6f0f49f955144f9a522",
-    ".claude-plugin/marketplace.json": "3381d5dbdd6b0c199366d633ee521ce21de17dd9984deeca98da5fdb32aa224e",
-    ".claude-plugin/plugin.json": "1fefc07faecd63622bb4f57959c810ccd631aee87b9a4a5cad1f790debdd07ce",
-    "gemini-extension.json": "6a7b016e6deff355799eb0c4e93b030bf1fc55f029e2a9e00ba20078838539b8",
-    "plugin.json": "e62c2daccd11e5b294158c10c9678ad0452b37cedfca54cbda57795477316a5c",
-    "skills/duet/SKILL.md": "750bc6eaceeaef7eabcdc0f54d7ee69a9a077eb6c03e985f06b91a31ae85de60",
+    ".claude-plugin/marketplace.json": "2d7f0a0698bc5cbc0d61608f8a31df74ef1ec6b984764511df99d42f519e04de",
+    ".claude-plugin/plugin.json": "97aafb0ede8b7fa1d93a73d3107f8664964bac4c7cb69ff9b7203230f2221c33",
+    "gemini-extension.json": "2760743cd4944f7414a33caceb905c9be251c0209b654bb2ee32a7110f06c201",
+    "plugin.json": "d0d8ed296c8eeef31bf779d43eaa543188f907782c84ba1b11c877189a9ab242",
+    "skills/duet/SKILL.md": "6de2d4a464ae20975cdf18d9a225b4cff0c833ecb910b6addeb9a46c67d15fb9",
     "skills/duet/references/boundaries.md": "d4c014e1bc0ad936823ab65615a25578d7b898f4b3c4f06ac9504c62893c19e3",
     "skills/duet/references/cleanup.md": "c39856054942eeeb899672404e65701d93247192cb699f55901133b525b6c536",
     "skills/duet/references/delivery.md": "a925378d90974dd8fa471fcee28c1aa90ba0785e537c3e1330fd77056201c6e9",
