@@ -26,8 +26,9 @@ export function manifests(pkg: { version: string; description: string }): Record
   const author = { name: 'Steven Liu' };
   return {
     'plugin.json': json({ $schema: schema, ...common, author, repository }),
-    '.claude-plugin/plugin.json': json({ ...common, author, repository, skills: './skills/' }),
+    '.claude-plugin/plugin.json': json({ ...common, displayName: 'Duet', author, homepage: repository, repository, license: 'MIT', skills: './skills/' }),
     '.claude-plugin/marketplace.json': json({ name: MARKETPLACE, owner: author,
+      metadata: { description: 'Duet: a prototyper/engineer workflow for teams that work through coding agents' },
       plugins: [{ name: 'duet', source: './', version: pkg.version, description: pkg.description }] }),
     '.agents/plugins/marketplace.json': json({ name: MARKETPLACE,
       interface: { displayName: 'Duet' }, plugins: [{ name: 'duet',

@@ -3,11 +3,14 @@
   "owner": {
     "name": "Steven Liu"
   },
+  "metadata": {
+    "description": "Duet: a prototyper/engineer workflow for teams that work through coding agents"
+  },
   "plugins": [
     {
       "name": "duet",
       "source": "./",
-      "version": "0.26.0",
+      "version": "0.26.1",
       "description": "A workflow for two roles working through coding agents: one prototypes ideas, the other engineers the chosen ones for production"
     }
   ]

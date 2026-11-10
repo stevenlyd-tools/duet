@@ -1,7 +1,7 @@
 ---
 name: duet
 metadata:
-  version: "0.26.0"
+  version: "0.26.1"
 description: Coordinate a two-role team where one person prototypes ideas and another engineers the chosen ones for production, both working through coding agents. Use for prototype experiments, Alpha previews, handoff, hardening selected work onto main, cleanup of finished branches, and "what is next / show TODOs / 有什么 todo" questions in a project that uses Duet.
 compatibility: Requires Git. The optional CLI needs Node.js 22.18 or newer. Pairs with the suo Skill when the project uses Suo for product definitions; Suo is recommended, not required.
 ---
