@@ -12,7 +12,7 @@ See [release process](https://github.com/stevenlyd/duet/blob/main/docs/releases.
 
 ### Added
 
-- A plugin icon (`.claude-plugin/icon.png`, with its SVG source) and the `displayName`, `homepage` and `license` fields in the Claude Code plugin manifest. The skill and the CLI are unchanged.
+- A plugin icon (`.claude-plugin/icon.png`) and the `displayName`, `homepage` and `license` fields in the Claude Code plugin manifest. The skill and the CLI are unchanged.
 
 ### Breaking changes
 
