@@ -1,6 +1,6 @@
 {
   "name": "@stevenlyd/duet",
-  "version": "0.26.1",
+  "version": "0.26.2",
   "private": true,
   "description": "A workflow for two roles working through coding agents: one prototypes ideas, the other engineers the chosen ones for production",
   "type": "module",

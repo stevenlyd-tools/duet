@@ -8,6 +8,20 @@ See [release process](https://github.com/stevenlyd/duet/blob/main/docs/releases.
 
 ## [Unreleased]
 
+## [0.26.2] - 2026-11-11
+
+### Changed
+
+- Duet moved to `stevenlyd-tools/duet`. Claude Code, Codex and Copilot install it from the shared `stevenlyd-tools` marketplace (`stevenlyd-tools/plugins`), which lists Duet and Suo pinned to releases. The repository no longer carries a marketplace of its own.
+
+### Breaking changes
+
+- The `stevenlyd-duet` marketplace is gone. `duet@stevenlyd-duet` no longer updates.
+
+### Migration
+
+- Remove the `stevenlyd-duet` marketplace, add `stevenlyd-tools/plugins`, and install `duet@stevenlyd-tools`. Gemini CLI and Pi installs keep working through the redirect; reinstall from `stevenlyd-tools/duet` when convenient.
+
 ## [0.26.1] - 2026-11-10
 
 ### Added

@@ -1,13 +1,13 @@
 {
   "name": "duet",
-  "version": "0.26.1",
+  "version": "0.26.2",
   "description": "A workflow for two roles working through coding agents: one prototypes ideas, the other engineers the chosen ones for production",
   "displayName": "Duet",
   "author": {
     "name": "Steven Liu"
   },
-  "homepage": "https://github.com/stevenlyd/duet",
-  "repository": "https://github.com/stevenlyd/duet",
+  "homepage": "https://github.com/stevenlyd-tools/duet",
+  "repository": "https://github.com/stevenlyd-tools/duet",
   "license": "MIT",
   "skills": "./skills/"
 }

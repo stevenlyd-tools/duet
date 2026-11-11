@@ -1,6 +1,6 @@
 # Duet with Suo
 
-[Suo](https://github.com/stevenlyd/suo) records what a product is meant to do as versioned Units: an objective, scope and acceptance criteria, a choice state, and honest implementation coverage. Duet moves code from prototype to `main`. They are separate tools that fit together: Suo answers "what did we decide to build", Duet answers "where is the code for it".
+[Suo](https://github.com/stevenlyd-tools/suo) records what a product is meant to do as versioned Units: an objective, scope and acceptance criteria, a choice state, and honest implementation coverage. Duet moves code from prototype to `main`. They are separate tools that fit together: Suo answers "what did we decide to build", Duet answers "where is the code for it".
 
 Suo is recommended, not required. Use it when the project declares it. Do not initialize Suo in a project just to use Duet.
 
