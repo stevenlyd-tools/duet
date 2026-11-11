@@ -6,8 +6,9 @@ import { execFileSync } from 'node:child_process';
 
 export const ROOT = fileURLToPath(new URL('../', import.meta.url));
 const schema = 'https://agent-plugins.org/schemas/1.0.0/plugin.schema.json';
-const repository = 'https://github.com/stevenlyd/duet';
-export const MARKETPLACE = 'stevenlyd-duet';
+const repository = 'https://github.com/stevenlyd-tools/duet';
+/** Host catalogs live in stevenlyd-tools/plugins, which pins this repository by release tag. */
+export const MARKETPLACE = 'stevenlyd-tools';
 const json = (value: unknown) => JSON.stringify(value, null, 2) + '\n';
 export function validVersion(version: string): boolean {
   return /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$/.test(version);
@@ -27,13 +28,6 @@ export function manifests(pkg: { version: string; description: string }): Record
   return {
     'plugin.json': json({ $schema: schema, ...common, author, repository }),
     '.claude-plugin/plugin.json': json({ ...common, displayName: 'Duet', author, homepage: repository, repository, license: 'MIT', skills: './skills/' }),
-    '.claude-plugin/marketplace.json': json({ name: MARKETPLACE, owner: author,
-      metadata: { description: 'Duet: a prototyper/engineer workflow for teams that work through coding agents' },
-      plugins: [{ name: 'duet', source: './', version: pkg.version, description: pkg.description }] }),
-    '.agents/plugins/marketplace.json': json({ name: MARKETPLACE,
-      interface: { displayName: 'Duet' }, plugins: [{ name: 'duet',
-        source: { source: 'local', path: './' },
-        policy: { installation: 'AVAILABLE', authentication: 'ON_INSTALL' }, category: 'Productivity' }] }),
     'gemini-extension.json': json(common),
   };
 }

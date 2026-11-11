@@ -47,20 +47,22 @@ Duet does **not** fit a team where everyone is responsible for production qualit
 
 Duet is a plain skill directory with native plugin manifests. Install it through your agent host:
 
+Duet and [Suo](https://github.com/stevenlyd-tools/suo) are published together in the [`stevenlyd-tools` marketplace](https://github.com/stevenlyd-tools/plugins), which pins each to a release:
+
 | Host | Install |
 | --- | --- |
-| Claude Code | `claude plugin marketplace add stevenlyd/duet`, then `claude plugin install duet@stevenlyd-duet` |
-| Codex | `codex plugin marketplace add stevenlyd/duet`, then choose `duet` in the Plugins UI |
-| GitHub Copilot CLI | `copilot plugin marketplace add stevenlyd/duet`, then `copilot plugin install duet@stevenlyd-duet` |
-| Gemini CLI | `gemini extensions install https://github.com/stevenlyd/duet.git` |
-| Pi | `pi install git:github.com/stevenlyd/duet` |
+| Claude Code | `claude plugin marketplace add stevenlyd-tools/plugins`, then `claude plugin install duet@stevenlyd-tools` |
+| Codex | `codex plugin marketplace add stevenlyd-tools/plugins`, then `codex plugin add duet@stevenlyd-tools` |
+| GitHub Copilot CLI | `copilot plugin marketplace add stevenlyd-tools/plugins`, then `copilot plugin install duet@stevenlyd-tools` |
+| Gemini CLI | `gemini extensions install https://github.com/stevenlyd-tools/duet.git --ref vX.Y.Z` |
+| Pi | `pi install git:github.com/stevenlyd-tools/duet@vX.Y.Z` |
 
 Cursor, Copilot in VS Code, Hermes, updates and pinning are covered in [distribution](docs/distribution.md). Both people install it; each agent then works out its role from the request and the project's instructions.
 
 The skill works with ordinary Git and your existing CI/CD. The CLI is optional and needs Git and Node.js 22.18 or newer, with no dependencies:
 
 ```sh
-git clone https://github.com/stevenlyd/duet.git
+git clone https://github.com/stevenlyd-tools/duet.git
 alias duet='node /path/to/duet/src/cli.ts'
 ```
 
@@ -116,7 +118,7 @@ See [persistent Alpha](docs/persistent-alpha.md). Alpha keeps real users and dat
 
 A handoff has to say what the work is meant to do and how to accept it. Without anything else, that lives in the checkpoint's description and acceptance criteria.
 
-[Suo](https://github.com/stevenlyd/suo) is a separate skill that keeps product definitions as versioned Units with states. With it, handoffs reference Units instead of free text, Duet's stages map onto Suo's states (`proposed` → `experimental` → `approved` → implemented), and `duet completion` can check that what was merged covers what was decided. See [Duet with Suo](skills/duet/references/suo.md).
+[Suo](https://github.com/stevenlyd-tools/suo) is a separate skill that keeps product definitions as versioned Units with states. With it, handoffs reference Units instead of free text, Duet's stages map onto Suo's states (`proposed` → `experimental` → `approved` → implemented), and `duet completion` can check that what was merged covers what was decided. See [Duet with Suo](skills/duet/references/suo.md).
 
 Likewise, Duet does not prescribe an engineering standard for the hardening step. If your project declares one in its own instructions, the engineer's agent applies it.
 

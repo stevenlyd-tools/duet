@@ -10,7 +10,7 @@ const read = (path: string) => JSON.parse(readFileSync(join(ROOT, path), 'utf8')
 function fixture(t: any) {
   const root = mkdtempSync(join(tmpdir(), 'duet-distribution-'));
   t.after(() => rmSync(root, { recursive: true, force: true }));
-  for (const path of ['package.json', 'skills', 'src', 'plugin.json', '.claude-plugin', '.agents', 'gemini-extension.json', 'distribution-lock.json']) {
+  for (const path of ['package.json', 'skills', 'src', 'plugin.json', '.claude-plugin', 'gemini-extension.json', 'distribution-lock.json']) {
     cpSync(join(ROOT, path), join(root, path), { recursive: true });
   }
   return root;
@@ -30,7 +30,7 @@ test('native manifests expose one canonical skill tree and no permission or exec
   assert.match(portable.name, /^(?!.*(?:--|\.\.))[a-z0-9](?:[a-z0-9.-]*[a-z0-9])?$/);
   assert.ok(portable.name.length <= 64);
   assert.deepEqual(Object.keys(portable).sort(), ['$schema', 'author', 'description', 'name', 'repository', 'version']);
-  assert.equal(portable.repository, 'https://github.com/stevenlyd/duet');
+  assert.equal(portable.repository, 'https://github.com/stevenlyd-tools/duet');
   assert.equal(read('.claude-plugin/plugin.json').skills, './skills/');
   assert.deepEqual(Object.keys(read('gemini-extension.json')).sort(), ['description', 'name', 'version']);
   assert.deepEqual(read('package.json').pi, { skills: ['./skills'] });
@@ -45,16 +45,10 @@ test('native manifests expose one canonical skill tree and no permission or exec
   }
 });
 
-test('marketplaces resolve to this package without auto-installing or authorizing tools', () => {
-  const claude = read('.claude-plugin/marketplace.json');
-  const codex = read('.agents/plugins/marketplace.json');
-  assert.equal(claude.name, MARKETPLACE);
-  assert.equal(codex.name, MARKETPLACE);
-  assert.deepEqual(claude.plugins.map((p: any) => [p.name, p.source]), [['duet', './']]);
-  assert.deepEqual(codex.plugins[0].source, { source: 'local', path: './' });
-  assert.deepEqual(codex.plugins[0].policy, { installation: 'AVAILABLE', authentication: 'ON_INSTALL' });
-  assert.equal(codex.plugins[0].category, 'Productivity');
-  assert.equal(claude.plugins[0].version, read('package.json').version);
+test('the package ships no marketplace of its own; the stevenlyd-tools catalog lists it', () => {
+  assert.equal(MARKETPLACE, 'stevenlyd-tools');
+  for (const path of ['.claude-plugin/marketplace.json', '.agents/plugins/marketplace.json']) assert.equal(existsSync(join(ROOT, path)), false, path);
+  assert.deepEqual(Object.keys(expectedDistribution()).filter(path => path.includes('marketplace')), []);
 });
 
 test('changed skill, CLI, Pi metadata and stale generated manifests fail validation', t => {

@@ -1,7 +1,7 @@
 ---
 name: duet
 metadata:
-  version: "0.26.1"
+  version: "0.26.2"
 description: Coordinate a two-role team where one person prototypes ideas and another engineers the chosen ones for production, both working through coding agents. Use for prototype experiments, Alpha previews, handoff, hardening selected work onto main, cleanup of finished branches, and "what is next / show TODOs / 有什么 todo" questions in a project that uses Duet.
 compatibility: Requires Git. The optional CLI needs Node.js 22.18 or newer. Pairs with the suo Skill when the project uses Suo for product definitions; Suo is recommended, not required.
 ---
@@ -66,7 +66,7 @@ The goal is to make one selected piece of work correct and maintainable, without
 
 When a request changes user-visible behavior, scope or acceptance criteria, compare it with the current product definition before implementing. Carry forward a decision the user has already made; do not ask for the same approval twice. Brainstorming, praise, quoted speech and tentative suggestions are not decisions.
 
-Projects that use [Suo](https://github.com/stevenlyd/suo) keep those definitions as Units, and Duet's stages map onto Suo's states. This is the recommended setup; read [Suo](references/suo.md). Projects without Suo carry the same information in the checkpoint's description and acceptance criteria.
+Projects that use [Suo](https://github.com/stevenlyd-tools/suo) keep those definitions as Units, and Duet's stages map onto Suo's states. This is the recommended setup; read [Suo](references/suo.md). Projects without Suo carry the same information in the checkpoint's description and acceptance criteria.
 
 ## Finding and tracking work
 
