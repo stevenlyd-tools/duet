@@ -8,6 +8,20 @@ See [release process](https://github.com/stevenlyd/duet/blob/main/docs/releases.
 
 ## [Unreleased]
 
+## [0.26.3] - 2026-11-27
+
+### Changed
+
+- A hardening handoff closes once it is merged to `main` and Alpha is recomposed. Its completion condition no longer asks the prototyper to confirm after the merge: selecting the checkpoint is their acceptance, and user-visible changes made during hardening already go to them before the merge. An older handoff that still asks for that confirmation keeps it until the decision maker drops it, recorded in the closing comment. ([#3](https://github.com/stevenlyd-tools/duet/pull/3))
+
+### Breaking changes
+
+- None.
+
+### Migration
+
+- None. Handoffs already open keep their written completion condition until their decision maker drops the confirmation step.
+
 ## [0.26.2] - 2026-11-11
 
 ### Changed

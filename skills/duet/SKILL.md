@@ -1,7 +1,7 @@
 ---
 name: duet
 metadata:
-  version: "0.26.2"
+  version: "0.26.3"
 description: Coordinate a two-role team where one person prototypes ideas and another engineers the chosen ones for production, both working through coding agents. Use for prototype experiments, Alpha previews, handoff, hardening selected work onto main, cleanup of finished branches, and "what is next / show TODOs / 有什么 todo" questions in a project that uses Duet.
 compatibility: Requires Git. The optional CLI needs Node.js 22.18 or newer. Pairs with the suo Skill when the project uses Suo for product definitions; Suo is recommended, not required.
 ---
@@ -47,7 +47,7 @@ The goal is a running preview of the idea, with as little ceremony as possible.
 3. **Checkpoint** when the prototype shows something worth looking at. A checkpoint pins an exact commit and records what it does and how to tell that it works (a description and acceptance criteria, or Suo Units, see [Suo](references/suo.md)).
 4. **Put it in Alpha.** Alpha is a preview composed from `main` plus explicitly selected checkpoints. Its code is replaceable; its users and data are not. A conflict stops composition: report it, never drop or rewrite an experiment to get past it. Follow [boundaries](references/boundaries.md) for data, secrets and migrations.
 5. **Select or discard.** The prototyper decides which experiments are worth keeping. Selecting for Alpha is not approval to release.
-6. **Hand off** the selected checkpoint. The handoff names the exact commit, what it is meant to do, how to accept it and what it depends on. Record who is meant to pick it up separately from whether they have; a handoff does not prove anyone accepted or started the work.
+6. **Hand off** the selected checkpoint. The handoff names the exact commit, what it is meant to do, how to accept it and what it depends on. Its completion condition ends with the merge to `main` and the recomposed Alpha: selecting the checkpoint was the prototyper's acceptance, and anything hardening changes that users can see comes back to them before the merge (engineer step 4), so do not add a confirmation by the prototyper after the merge. Record who is meant to pick it up separately from whether they have; a handoff does not prove anyone accepted or started the work.
 
 A prototyper's agent does not merge to `main`, deploy outside Alpha, or change repository protections.
 
@@ -60,7 +60,7 @@ The goal is to make one selected piece of work correct and maintainable, without
 3. **Do the engineering.** Rework the prototype as far as needed: tests, failure handling, security, migrations and rollback, documentation. Passing Alpha checks is not hardening evidence. If the project declares an engineering standard, apply it here.
 4. **Feed back what changed.** If hardening changes user-visible behavior, tell the prototyper before merging; that is a product decision, not an engineering detail.
 5. **Review and merge** through the project's real process and protections. A local flag or record cannot approve a merge. Approval of one SHA or environment does not cover another.
-6. **Reconcile.** After the merge, record it, recompose Alpha from the new `main` plus the remaining selections, close what the acceptance criteria say is done ([issue closure](references/issue-closure.md)), and clean up this task's temporary branches ([cleanup](references/cleanup.md)).
+6. **Reconcile.** After the merge, record it, recompose Alpha from the new `main` plus the remaining selections, close what the acceptance criteria say is done without waiting for the prototyper to confirm it again ([issue closure](references/issue-closure.md)), and clean up this task's temporary branches ([cleanup](references/cleanup.md)).
 
 ## Product definitions
 
